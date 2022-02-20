@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  if error
+    p Error getting dynamic content.
+  else
+    p My library consists of:
+
+    ul
+      li #[strong Books on my List:] !{data.book_count}
+      li #[strong Books I Own:] !{data.owned_count}
+      li #[strong Authors:] !{data.author_count}
+      li #[strong Genres:] !{data.genre_count}

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+  h1 Owned Copy of #{owned.book.title}
+
+  p #[strong Title: ]
+    a(href=owned.book.url) #{owned.book.title}
+
+  p #[strong ID:] #{owned._id}
+
+  p #[strong Status: ] #{owned.status}
+
+  hr
+  p
+    a(href=owned.url+'/delete') Delete owned book

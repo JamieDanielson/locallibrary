@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1 Title: #{book.title}
+
+  p #[strong Author: ]
+    a(href=book.author.url) #{book.author.name}
+  p #[strong Summary: ] #{book.summary}
+  p #[strong Genre: ]
+    each val, index in book.genre
+      a(href=val.url) #{val.name}
+      if index < book.genre.length -1
+        |,
+  
+  div
+    each val in owned
+      if val.status=='Owned'
+        p #[strong Owned: ] #{val.status}
+    else
+      p #[strong Owned: ] not yet
+
+  hr
+  p
+    a(href=book.url+'/delete') Delete book
+  p
+    a(href=book.url+'/update') Update Book

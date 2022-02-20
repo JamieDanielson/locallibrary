@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 #{title}: #{owned.name}
+
+  p Do you really want to delete this owned book?
+
+    form(method='POST' action='')
+      div.form-group
+        input#ownedid.form-control(type='hidden',name='ownedid', required='true', value=owned._id )
+
+      button.btn.btn-primary(type='submit') Delete

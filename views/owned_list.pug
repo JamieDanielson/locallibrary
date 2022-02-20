@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+
+  p
+    a(href='/catalog/owned/create') Add to owned books
+
+  ul
+    each val in owned_list
+      li
+        a(href=val.url) #{val.book.title}
+    
+    else
+      li You own no books.
